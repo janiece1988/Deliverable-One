@@ -35,4 +35,24 @@ public class IntSum {
       System.err.println("Inputs cannot be empty");
       System.exit(1);
     }
-   
+
+    if (int1.length() != int2.length()) {
+      System.err.println("Inputs are different lengths");
+      System.exit(2);
+    }
+
+    try {
+      Integer.parseInt(int1);
+      Integer.parseInt(int2);
+    } catch (NumberFormatException e) {
+      System.err.println("Inputs must be numbers!");
+      System.exit(3);
+    }
+
+    if (compareNumbers(int1, int2)) {
+      System.out.println("True");
+    } else {
+      System.out.println("False");
+    }
+  }
+}
